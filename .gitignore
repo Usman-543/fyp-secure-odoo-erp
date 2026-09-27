@@ -1,0 +1,14 @@
+configs/postgres.env
+configs/odoo/odoo.conf
+*.key
+*.pem
+*.crt
+backups/*
+logs/*
+docker/*-logs/*
+ModSecurity/
+ModSecurity-nginx/
+configs/coreruleset/
+*.swp
+*.tmp
+.DS_Store
