@@ -6,7 +6,7 @@ services:
     container_name: odoo-postgres
     restart: always
     env_file:
-      - ../configs/postgres.env
+      - ../configs/postgres.env          # create this locally from .env.example — never commit real file
     volumes:
       - postgres-data:/var/lib/postgresql/data/pgdata
       - ./postgres-logs:/var/log/postgresql
@@ -38,7 +38,7 @@ services:
     environment:
       - HOST=postgres
       - USER=odoo
-      - PASSWORD=SecureOdooPass2025!
+      - PASSWORD=${ODOO_DB_PASSWORD}     # set via environment / .env — never hardcode
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8069/web/health"]
       interval: 30s
